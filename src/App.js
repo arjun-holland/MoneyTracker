@@ -78,7 +78,7 @@ function App() {
   // -------------------- API Functions -------------------- //
   // Fetch all transactions from backend
   async function getTransactions() {
-    const url = process.env.REACT_APP_API_URL + "/transaction"; // Construct API URL from .env variable
+    const url = process.env.REACT_APP_API_URL + "/api/transaction"; // Construct API URL from .env variable
     const response = await fetch(url); // Make GET request
     return await response.json();      // Parse and return JSON data
   }
@@ -86,7 +86,7 @@ function App() {
   // Function to add a new transaction (called when form is submitted)
   function addNewTransaction(event) {
     event.preventDefault(); // Prevent page reload on form submit
-    const url = process.env.REACT_APP_API_URL + "/transaction";    // API endpoint
+    const url = process.env.REACT_APP_API_URL + "/api/transaction";    // API endpoint
     const price = name.split(" ")[0];       // Extract first word as price (e.g., "2000 rent" → price = 2000)
 
     //console.log(url); // Debug: log the API URL being used
